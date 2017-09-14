@@ -17,8 +17,7 @@ namespace Sepidrah.Web.Core.Security
                 Username = "Administrator",
                 Password = "password",
                 JWTSecret = "SuperSecretFormula"
-
-
+                
 
             };
         }
