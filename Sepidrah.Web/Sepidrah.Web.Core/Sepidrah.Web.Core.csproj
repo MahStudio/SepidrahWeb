@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\UserBL.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Models\ResponseBase.cs" />
     <Compile Include="Models\UserCredencials.cs" />
@@ -67,9 +68,7 @@
     <Compile Include="Security\ServerConfiguration.cs" />
     <Compile Include="Util\Utils.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BL\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
