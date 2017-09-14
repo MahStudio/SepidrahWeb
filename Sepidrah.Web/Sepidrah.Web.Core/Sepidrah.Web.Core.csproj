@@ -59,6 +59,7 @@
     <Compile Include="DBConnect.cs" />
     <Compile Include="Models\ResponseBase.cs" />
     <Compile Include="Models\UserCredencials.cs" />
+    <Compile Include="Models\UserDetailModel.cs" />
     <Compile Include="Models\UserEmailLookupModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
