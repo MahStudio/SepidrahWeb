@@ -12,6 +12,7 @@ namespace Sepidrah.Web.APIs
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            Core.DBConnect.DoConfig();
         }
     }
 }

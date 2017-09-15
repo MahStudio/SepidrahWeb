@@ -12,7 +12,7 @@ using Sepidrah.Web.Core.Models;
 
 namespace Sepidrah.Web.Core
 {
-    internal static class DBConnect
+    public static class DBConnect
     {
         public static void DoConfig()
         {
