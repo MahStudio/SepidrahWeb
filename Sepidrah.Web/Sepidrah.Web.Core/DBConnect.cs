@@ -8,6 +8,7 @@ using Couchbase;
 using Couchbase.Authentication;
 using Couchbase.Core;
 using Sepidrah.Web.Core.Security;
+using Sepidrah.Web.Core.Models;
 
 namespace Sepidrah.Web.Core
 {
@@ -29,6 +30,51 @@ namespace Sepidrah.Web.Core
 
             return ClusterHelper.GetBucket(new ServerConfiguration().GetValues().Bucket);
 
+        }
+        internal static async Task<ResponseBase> CreateLookUpAsync<T>(T Data, string key)
+        {
+
+
+            var document = new Document<T>
+            {
+                Id = key,
+                Content = Data
+            };
+
+            var upsert = await GetBucket().InsertAsync(document);
+            if (upsert.Success)
+            {
+                return new ResponseBase() { Status = Status.OK };
+            }
+            else
+            {
+                var err = new List<ErrorBase>();
+                err.Add(ErrorBase.DatabaseInsertError);
+                return new ResponseBase() { Status = Status.Faiure, Error = err };
+
+
+
+            }
+        }
+        internal static async Task<ResponseBase> UpdateLookup<T>(T Data, string key)
+        {
+            var document = new Document<T>
+            {
+                Id = key,
+                Content = Data
+            };
+
+            var upsert = GetBucket().Replace<T>(document);
+            if (upsert.Success)
+            {
+                return new ResponseBase() { Status = Status.OK };
+            }
+            else
+            {
+                var err = new List<ErrorBase>();
+                err.Add(ErrorBase.DatabaseUpdateError);
+                return new ResponseBase() { Status = Status.Faiure, Error = err };
+            }
         }
     }
 }

@@ -45,6 +45,11 @@ namespace Sepidrah.Web.Core.Models
         AppNotValid = 6,
         RequestSpam = 7,
 
+        //internal errors
+        FileSizeExceded = 100,
+        DatabaseInsertError = 101,
+        DatabaseUpdateError = 102,
+        DatabaseConnectionError = 103,
 
         //UserErrors
         UserEmailNotValid = 203,
