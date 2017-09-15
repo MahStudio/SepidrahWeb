@@ -71,6 +71,7 @@
     <Compile Include="Security\Constants.cs" />
     <Compile Include="Security\ServerConfiguration.cs" />
     <Compile Include="Util\Utils.cs" />
+    <Compile Include="ViewModels\VMUserLevelOne.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

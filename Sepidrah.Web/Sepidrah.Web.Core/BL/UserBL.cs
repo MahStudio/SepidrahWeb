@@ -8,6 +8,7 @@ using Couchbase.Core;
 using Sepidrah.Web.Core.Util;
 using JWT;
 using Sepidrah.Web.Core.Security;
+using Sepidrah.Web.Core.ViewModels;
 
 namespace Sepidrah.Web.Core.BL
 {
@@ -86,6 +87,15 @@ namespace Sepidrah.Web.Core.BL
             var Rx = new ResponseBase() { Status = Status.OK, Data= User.UserKey };
             
             return Rx ;
+        }
+        public async Task<VMUserLevelOne> GetUserLevelOne(string email)
+        {
+            var a = await GetUserByKey((int)(await GetUserKeyByEmail(email)).Data);
+            return new VMUserLevelOne() { Email=a.Email,LastName=a.LastName,Name=a.Name };
+        }
+        internal async Task<UserModel> GetUserByKey(int Key)
+        {
+            return _bucket.Get<UserModel>(Utils.KeyMaker(new UserModel().Type, Key)).Value;
         }
         #region Authentication
         internal async Task<UserCredencials> GetUserCredencial(int UserKey)
