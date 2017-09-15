@@ -86,6 +86,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Auth\FunctionDisabledAttribute.cs" />
+    <Compile Include="Auth\UserAuthAttribute.cs" />
+    <Compile Include="Auth\ValidateAppAttribute.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

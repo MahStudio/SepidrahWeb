@@ -67,6 +67,7 @@
     <Compile Include="Models\UserEmailLookupModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Certification.cs" />
     <Compile Include="Security\Constants.cs" />
     <Compile Include="Security\ServerConfiguration.cs" />
     <Compile Include="Util\Utils.cs" />
