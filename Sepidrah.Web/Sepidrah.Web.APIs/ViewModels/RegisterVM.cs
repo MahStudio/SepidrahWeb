@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sepidrah.Web.APIs
+namespace Sepidrah.Web.APIs.ViewModels
 {
     public class RegisterVM
     {

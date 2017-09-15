@@ -1,4 +1,5 @@
 ﻿using Sepidrah.Web.APIs.Auth;
+using Sepidrah.Web.APIs.ViewModels;
 using Sepidrah.Web.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,38 @@ namespace Sepidrah.Web.APIs.Controllers
 
             }
 
+
+        }
+        [Route("signin")]
+        [ValidateApp]
+        [HttpPost]
+        public async Task<IHttpActionResult> SignIn(LoginVM user)
+        {
+
+            if (!(user.IsValid().Status == Status.OK))
+            {
+                return Content(HttpStatusCode.BadRequest, user.IsValid());
+            }
+            
+
+            var usr = new Core.BL.UserBL();
+            ResponseBase r = await usr.AuthenticateByEmail(user.Email, user.Password); 
+
+
+
+
+            if (r.Status == Status.OK)
+                return Content(HttpStatusCode.Accepted, new ResponseBase()
+                {
+                    Status = Status.OK,
+                    Data = new
+                    {
+                        token = usr.GenerateToken(user.Email),
+                        user = await usr.GetUserLevelOne(user.Email)
+                    }
+                });
+            else
+                return Content(HttpStatusCode.Conflict, r);
 
         }
     }
