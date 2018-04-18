@@ -1,5 +1,5 @@
 # SepidrahWeb
-A back-end API service for [Sepidrah](https://github.com/MahStudio/SepidRahUWP) powered by couchbase server NoSQL.
+A RESTful API back-end service for [Sepidrah](https://github.com/MahStudio/SepidRahUWP) powered by couchbase server NoSQL.
 
 ### Build Prerequisites
 
