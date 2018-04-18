@@ -13,7 +13,7 @@ namespace Sepidrah.Web.Core.Security
             return new ServerConfiguration()
             {
                 Bucket = "Sepidrah",
-                Server = "http://88.99.164.232",
+                Server = "http://somewhere",
                 Username = "Administrator",
                 Password = "password",
                 JWTSecret = "SuperSecretFormula"
