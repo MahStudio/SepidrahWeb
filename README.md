@@ -12,4 +12,4 @@ A back-end API service for [Sepidrah](https://github.com/MahStudio/SepidRahUWP) 
 ### Authors
 
 This project is designed, developed, maintained and supported by the community software development team **Mah Studio**.
-See also the list of [contributors](https://github.com/MahStudio/SepidRahUWP/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/MahStudio/SepidrahWeb/contributors) who participated in this project.
